@@ -15,5 +15,10 @@ public class Vendeur extends Employe{
 	public double getCommission() {
 		return this.commission;
 	}
+	
+	@Override
+	public double calculSalaire() {
+		return super.calculSalaire()+this.commission;
+	}
 
 }
