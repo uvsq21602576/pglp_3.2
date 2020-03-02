@@ -11,7 +11,7 @@ public class EmployeTest {
 	@Test
 	public void calculSalaireTest() {
 		Employe E = new Employe("Prenom Nom", 2015);
-		assertEquals(1500+(Calendar.getInstance().get(Calendar.YEAR)-2015)*20,E.calculSalaire(),0);
+		assertEquals(1500 + (Calendar.getInstance().get(Calendar.YEAR) - 2015) * 20, E.calculSalaire(), 0);
 	}
 	
 }

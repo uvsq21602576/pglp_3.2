@@ -5,12 +5,13 @@ public class Manager extends Employe {
 
 	public Manager(String nom, int dateArrivee, int nbPersonnel) {
 		super(nom, dateArrivee);
-		this.nbPersonnel=nbPersonnel;
+		this.nbPersonnel = nbPersonnel;
 	}
 	
 	@Override
 	public double calculSalaire() {
-		return super.calculSalaire()+100*this.nbPersonnel;
+		return super.calculSalaire() + 100 * this.nbPersonnel;
 	}
 	
 }
+
