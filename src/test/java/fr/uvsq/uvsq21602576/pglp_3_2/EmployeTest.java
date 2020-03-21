@@ -6,12 +6,21 @@ import java.util.Calendar;
 
 import org.junit.Test;
 
+/**
+ * Classe de test d'Employe.
+ * @author Flora
+ */
 public class EmployeTest {
-	
-	@Test
-	public void calculSalaireTest() {
-		Employe E = new Employe("Prenom Nom", 2015);
-		assertEquals(1500 + (Calendar.getInstance().get(Calendar.YEAR) - 2015) * 20, E.calculSalaire(), 0);
-	}
-	
+
+    /**
+     * Teste si le calcul du salaire fonctionne.
+     */
+    @Test
+    public void calculSalaireTest() {
+        Employe e = new Employe("Prenom Nom", 2015);
+        int anciennete = Calendar.getInstance().get(Calendar.YEAR) - 2015;
+        double expected = 1500 + anciennete * 20;
+        assertEquals(expected, e.calculSalaire(), 0);
+    }
+
 }

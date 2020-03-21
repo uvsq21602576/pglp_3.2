@@ -15,7 +15,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-    	<checkstyle.config.location>${basedir}/checkstyle.xml</checkstyle.config.location>
 	</properties>
 
 	<dependencies>
@@ -58,6 +57,11 @@
 						</reports>
 					</reportSet>
 				</reportSets>
+				<configuration>
+					<includeTestSourceDirectory>true</includeTestSourceDirectory>
+					<configLocation>${basedir}/checkstyle.xml</configLocation>
+					<suppressionsLocation>${basedir}/checkstyle-suppressions.xml</suppressionsLocation>
+				</configuration>
 			</plugin>
 			<!-- Plugin SpotBugs, éxécuté avec mvn site -->
 			<plugin>

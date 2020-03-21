@@ -6,21 +6,34 @@ import java.util.Calendar;
 
 import org.junit.Test;
 
+/**
+ * Classe de test pour Vendeur.
+ * @author Flora
+ *
+ */
 public class VendeurTest {
 
-	@Test
-	public void setCommissionTest() {
-		Vendeur V = new Vendeur("Prenom Nom", 2015);
-		double com = 210;
-		V.setCommission(com);
-		assertEquals(com, V.getCommission(), 0);
-	}
-	
-	@Test
-	public void calculSalaireTest() {
-		Vendeur V = new Vendeur("Prenom Nom", 2015);
-		V.setCommission(210);
-		assertEquals(1500 + (Calendar.getInstance().get(Calendar.YEAR) - 2015) * 20 + 210, V.calculSalaire(), 0);
-	}
+    /**
+     * Teste la méthode setCommission.
+     */
+    @Test
+    public void setCommissionTest() {
+        Vendeur v = new Vendeur("Prenom Nom", 2015);
+        double com = 210;
+        v.setCommission(com);
+        assertEquals(com, v.getCommission(), 0);
+    }
+
+    /**
+     * Teste la méthode calculSalaire.
+     */
+    @Test
+    public void calculSalaireTest() {
+        Vendeur v = new Vendeur("Prenom Nom", 2015);
+        v.setCommission(210);
+        int anciennete = Calendar.getInstance().get(Calendar.YEAR) - 2015;
+        double expected = 1500 + anciennete * 20 + 210;
+        assertEquals(expected, v.calculSalaire(), 0);
+    }
 
 }

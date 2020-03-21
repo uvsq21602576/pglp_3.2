@@ -6,15 +6,24 @@ import java.util.Calendar;
 
 import org.junit.Test;
 
+/**
+ * Classe de test pour Entreprise.
+ * @author Flora
+ */
 public class EntrepriseTest {
-	
-	@Test
-	public void sommeTotaleSalaire() {
-		Entreprise E = new Entreprise();
-		E.ajouteEmploye(new Employe("P1", 2019));
-		E.ajouteEmploye(new Vendeur("P2", 2019));
-		E.ajouteEmploye(new Manager("P3", 2019, 3));
-		
-		assertEquals((1500 + (Calendar.getInstance().get(Calendar.YEAR) - 2019) * 20) * 3 + 3 * 100, E.sommeTotaleSalaire(), 0);
-	}
+
+    /**
+     * Teste la méthode sommeTotaleSalaire.
+     */
+    @Test
+    public void sommeTotaleSalaire() {
+        Entreprise e = new Entreprise();
+        e.ajouteEmploye(new Employe("P1", 2019));
+        e.ajouteEmploye(new Vendeur("P2", 2019));
+        e.ajouteEmploye(new Manager("P3", 2019, 3));
+
+        int anciennete = Calendar.getInstance().get(Calendar.YEAR) - 2019;
+        double expected = (1500 + anciennete * 20) * 3 + 3 * 100;
+        assertEquals(expected, e.sommeTotaleSalaire(), 0);
+    }
 }
